@@ -587,13 +587,10 @@
         /* Contact Section */
         .contact-content {
             max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
         }
 
         .contact-links {
             display: flex;
-            justify-content: center;
             gap: 2rem;
             margin-top: 3rem;
             flex-wrap: wrap;
@@ -649,7 +646,6 @@
 
         /* Footer */
         footer {
-            text-align: center;
             padding: 3rem 0;
             border-top: 1px solid var(--border-color);
             color: var(--text-secondary);
@@ -972,7 +968,7 @@
                         <span class="contact-label">Email</span>
                     </a>
 
-                    <a href="https://github.com/alexrivera" target="_blank" class="contact-link">
+                    <a href="https://github.com/harshitdevio" target="_blank" class="contact-link">
                         <span class="contact-icon">💻</span>
                         <span class="contact-label">GitHub</span>
                     </a>
@@ -1115,10 +1111,10 @@
 
             // Contact Information
             contact: {
-                email: "alex.rivera@example.com",
-                github: "https://github.com/alexrivera",
+                email: "harshit.work44@gmail.com",
+                github: "https://github.com/harshitdevio",
                 linkedin: "https://linkedin.com/in/alexrivera",
-                twitter: "https://twitter.com/alexrivera"
+                twitter: "https://x.com/TheRookieTechie"
             }
         };
 
@@ -1158,7 +1154,6 @@ const projectsGrid = document.querySelector('.projects-grid');
 projectsGrid.style.display = 'flex';
 projectsGrid.style.flexDirection = 'column';
 projectsGrid.style.gap = '2rem';
-projectsGrid.style.alignItems = 'center'; // Centers the cards if they have a max-width
 
 projectsGrid.innerHTML = PORTFOLIO_DATA.projects.map(project => `
     <div class="project-card" style="width: 100%; max-width: 800px;">
