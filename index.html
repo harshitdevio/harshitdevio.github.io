@@ -722,7 +722,7 @@
     <section class="hero" id="about">
         <div class="container">
             <div class="hero-content">
-                <div class="hero-tag">🚀 Backend & Microservices Engineer</div>
+                <div class="hero-tag">Backend & Microservices Engineer</div>
                 <h1>Alex Rivera</h1>
                 <div class="hero-subtitle">Building Scalable Systems at Scale</div>
                 <p class="hero-description">
@@ -990,7 +990,7 @@
             // Projects
             projects: [
                 {
-                    icon: "🔐",
+                    icon: "",
                     title: "User Authentication & Onboarding Service",
                     description: ["Engineered a multi-step onboarding state machine (UNVERIFIED → LIMITED → FULL), ensuring 100% state integrity across complex fintech registration flows.",
                     "Architected a resilient OTP-based auth system utilizing Redis for high-speed verification and JWT (Access/Refresh) for secure session management.",
@@ -1000,22 +1000,27 @@
                 ],
                     tech: ["FastAPI", "PostgreSQL", "Redis", "OAuth2","Docker"],
                     links: {
-                        github: "https://github.com/yourusername/project1",
-                        demo: "https://demo.example.com"
+                        github: "https://github.com/harshitdevio/finguard-onboarding-service",
+                        demo: "https://finguard-backend-4o9g.onrender.com/docs"
                     }
                 },
                 {
-                    icon: "📊",
-                    title: "Real-time Analytics Pipeline",
-                    description: "Event-driven data processing pipeline for real-time analytics. Processes millions of events per hour with Apache Kafka and stream processing frameworks.",
-                    tech: ["Python", "Kafka", "Apache Flink", "Elasticsearch", "AWS"],
+                    icon: "",
+                    title: "Async Payment Orchestrator",
+                    description: ["Implemented strict FSM-based payment state machine with immutable terminal states and validated transitions, eliminating state corruption across distributed transaction lifecycles",
+                    "Architected idempotent webhook handler with cryptographic deduplication, rejecting out-of-order events and preventing double-charging via event sequencing",
+                    "Built asynchronous retry orchestration with exponential backoff and circuit breakers, achieving eventual consistency during provider outages",
+                    "Eliminated race conditions in concurrent payment processing using Redis distributed locks and PostgreSQL row-level locking under SERIALIZABLE isolation",
+                    "Reduced manual reconciliation by 85% through atomic state transitions with observability hooks for real-time anomaly detection",
+                ],
+                    tech: ["Python/FastAPI","PostgreSQL", "Redis", "OAuth2","Docker"],
                     links: {
-                        github: "https://github.com/yourusername/project2",
-                        demo: "https://casestudy.example.com"
+                        github: "https://github.com/harshitdevio/async-payments-service",
+                        demo: "https://async-payments-service.onrender.com/docs"
                     }
                 },
                 {
-                    icon: "🚀",
+                    icon: "",
                     title: "API Gateway & Rate Limiter",
                     description: "High-performance API gateway with intelligent routing, rate limiting, and request transformation. Built to handle 100K+ requests per second.",
                     tech: ["Node.js", "Express", "Redis", "Nginx", "Docker"],
@@ -1024,16 +1029,6 @@
                         demo: "https://docs.example.com"
                     }
                 },
-                {
-                    icon: "💾",
-                    title: "Distributed Cache System",
-                    description: "Custom distributed caching solution with consistent hashing, data replication, and automatic failover. Reduced database load by 70%.",
-                    tech: ["Java", "Spring Boot", "Hazelcast", "gRPC"],
-                    links: {
-                        github: "https://github.com/yourusername/project4",
-                        demo: "https://blog.example.com/cache-system"
-                    }
-                }
             ],
 
             // Skills organized by category
