@@ -497,6 +497,18 @@
             line-height: 1.7;
         }
 
+        .project-description-list {
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+            padding-left: 1.25rem;
+            list-style: disc;
+        }
+
+        .project-description-list li {
+            margin-bottom: 0.5rem;
+        }
+
         .project-tech {
             display: flex;
             flex-wrap: wrap;
@@ -534,67 +546,52 @@
         }
 
         /* Skills Section */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
+/* Skills Section */
+.skills-container {
+    margin-top: 3rem;
+}
 
-        .skill-category {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
-            padding: 2rem;
-            opacity: 0;
-            animation: fadeInUp 0.6s ease-out forwards;
-        }
+.skills-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-        .skill-category:nth-child(1) {
-            animation-delay: 0.1s;
-        }
+.skill-pill {
+    padding: 0.7rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+    transition: all 0.3s ease;
+    opacity: 0;
+    animation: fadeInUp 0.4s ease-out forwards;
+    cursor: default;
+}
 
-        .skill-category:nth-child(2) {
-            animation-delay: 0.2s;
-        }
+.skill-pill:hover {
+    border-color: var(--accent-primary);
+    color: var(--accent-primary);
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 5px 20px rgba(0, 255, 136, 0.2);
+    background: rgba(0, 255, 136, 0.05);
+}
 
-        .skill-category:nth-child(3) {
-            animation-delay: 0.3s;
-        }
-
-        .skill-category:nth-child(4) {
-            animation-delay: 0.4s;
-        }
-
-        .skill-category h3 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent-primary);
-            font-family: 'JetBrains Mono', monospace;
-        }
-
-        .skill-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.8rem;
-        }
-
-        .skill-item {
-            padding: 0.5rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            font-size: 0.9rem;
-            color: var(--text-secondary);
-            transition: all 0.3s ease;
-        }
-
-        .skill-item:hover {
-            border-color: var(--accent-primary);
-            color: var(--accent-primary);
-            transform: translateY(-2px);
-        }
-
+/* Staggered animation for pills */
+.skill-pill:nth-child(1) { animation-delay: 0.05s; }
+.skill-pill:nth-child(2) { animation-delay: 0.1s; }
+.skill-pill:nth-child(3) { animation-delay: 0.15s; }
+.skill-pill:nth-child(4) { animation-delay: 0.2s; }
+.skill-pill:nth-child(5) { animation-delay: 0.25s; }
+.skill-pill:nth-child(6) { animation-delay: 0.3s; }
+.skill-pill:nth-child(7) { animation-delay: 0.35s; }
+.skill-pill:nth-child(8) { animation-delay: 0.4s; }
+.skill-pill:nth-child(9) { animation-delay: 0.45s; }
+.skill-pill:nth-child(10) { animation-delay: 0.5s; }
         /* Contact Section */
         .contact-content {
             max-width: 800px;
@@ -742,88 +739,21 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">Skills & Technologies</h2>
-                <p class="section-subtitle">My technical toolkit for building scalable systems</p>
-            </div>
-
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>Languages</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Python</span>
-                        <span class="skill-item">Go</span>
-                        <span class="skill-item">Java</span>
-                        <span class="skill-item">Node.js</span>
-                        <span class="skill-item">Rust</span>
-                        <span class="skill-item">SQL</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Frameworks</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">FastAPI</span>
-                        <span class="skill-item">Django</span>
-                        <span class="skill-item">Spring Boot</span>
-                        <span class="skill-item">Express.js</span>
-                        <span class="skill-item">Gin</span>
-                        <span class="skill-item">Flask</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Databases</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">PostgreSQL</span>
-                        <span class="skill-item">MongoDB</span>
-                        <span class="skill-item">Redis</span>
-                        <span class="skill-item">Elasticsearch</span>
-                        <span class="skill-item">MySQL</span>
-                        <span class="skill-item">Cassandra</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Cloud & DevOps</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">AWS</span>
-                        <span class="skill-item">Docker</span>
-                        <span class="skill-item">Kubernetes</span>
-                        <span class="skill-item">Terraform</span>
-                        <span class="skill-item">CI/CD</span>
-                        <span class="skill-item">Prometheus</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Message Queues</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Apache Kafka</span>
-                        <span class="skill-item">RabbitMQ</span>
-                        <span class="skill-item">AWS SQS</span>
-                        <span class="skill-item">Redis Pub/Sub</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>Architecture</h3>
-                    <div class="skill-list">
-                        <span class="skill-item">Microservices</span>
-                        <span class="skill-item">REST APIs</span>
-                        <span class="skill-item">GraphQL</span>
-                        <span class="skill-item">gRPC</span>
-                        <span class="skill-item">Event-Driven</span>
-                        <span class="skill-item">CQRS</span>
-                    </div>
-                </div>
+   <!-- Skills Section -->
+<section id="skills">
+    <div class="container">
+    <div style="text-align: center;">
+        <h2 class="section-title">Skills & Technologies</h2>
+        <p class="section-subtitle">My technical toolkit for building scalable systems</p>
+    </div>
+        
+        <div class="skills-container">
+            <div class="skills-wrapper" id="skillsWrapper">
+                <!-- Skills will be populated by JavaScript -->
             </div>
         </div>
-    </section>
-
+    </div>
+</section>
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
@@ -1053,37 +983,22 @@
                         "Developed high-concurrency RESTful APIs consumed by frontend and external systems, prioritizing information hiding to reduce cross-team integration friction."
                     ]
                 },
-                // {
-                //     date: "2020 - 2022",
-                //     title: "Backend Engineer",
-                //     company: "StartupXYZ",
-                //     achievements: [
-                //         "Built RESTful APIs serving mobile and web applications with 500K+ active users",
-                //         "Optimized database queries reducing average query time by 75%",
-                //         "Implemented authentication and authorization systems using OAuth 2.0 and JWT",
-                //         "Developed real-time notification service using WebSockets and Redis pub/sub"
-                //     ]
-                // },
-                {
-                    date: "2018 - 2020",
-                    title: "Software Engineer",
-                    company: "Digital Innovations Inc",
-                    achievements: [
-                        "Developed and maintained backend services for e-commerce platform",
-                        "Implemented caching strategies with Redis improving response times by 40%",
-                        "Created automated testing suite achieving 85% code coverage",
-                        "Collaborated with frontend team to design efficient API contracts"
-                    ]
-                }
+
+
             ],
 
             // Projects
             projects: [
                 {
                     icon: "🔐",
-                    title: "Distributed Auth Service",
-                    description: "Microservices-based authentication and authorization platform handling millions of requests. Features multi-factor authentication, role-based access control, and session management.",
-                    tech: ["Go", "PostgreSQL", "Redis", "Docker", "Kubernetes"],
+                    title: "User Authentication & Onboarding Service",
+                    description: ["Engineered a multi-step onboarding state machine (UNVERIFIED → LIMITED → FULL), ensuring 100% state integrity across complex fintech registration flows.",
+                    "Architected a resilient OTP-based auth system utilizing Redis for high-speed verification and JWT (Access/Refresh) for secure session management.",
+                    "Eliminated race conditions and duplicate registrations by implementing explicit state guards and idempotency keys, ensuring predictable behavior during client-side retries.",
+                    "Hardened API security against brute-force and credential stuffing through custom rate-limiting middleware and automated abuse prevention logic.",
+                    "Achieved high-concurrency performance by optimizing PostgreSQL indexing for user lookups and utilizing Redis as a low-latency caching layer for active sessions.",
+                ],
+                    tech: ["FastAPI", "PostgreSQL", "Redis", "OAuth2","Docker"],
                     links: {
                         github: "https://github.com/yourusername/project1",
                         demo: "https://demo.example.com"
@@ -1123,12 +1038,12 @@
 
             // Skills organized by category
             skills: {
-                "Languages": ["Python", "Go", "Java", "Node.js", "Rust", "SQL"],
-                "Frameworks": ["FastAPI", "Django", "Spring Boot", "Express.js", "Gin", "Flask"],
-                "Databases": ["PostgreSQL", "MongoDB", "Redis", "Elasticsearch", "MySQL", "Cassandra"],
-                "Cloud & DevOps": ["AWS", "Docker", "Kubernetes", "Terraform", "CI/CD", "Prometheus"],
-                "Message Queues": ["Apache Kafka", "RabbitMQ", "AWS SQS", "Redis Pub/Sub"],
-                "Architecture": ["Microservices", "REST APIs", "GraphQL", "gRPC", "Event-Driven", "CQRS"]
+                "Languages": ["Python", "Go", "C++","PostgreSQL","Vector Databases", "REST APIs", "GraphQL", "gRPC","Redis", "Pandas"],
+                "Frameworks": ["FastAPI", "Django","Gin", "Flask"],
+                "Databases": ["MySQL","Qdrant DB"],
+                "Cloud & DevOps": ["AWS", "Docker", "Kubernetes","CI/CD"],
+                "Message Queues": ["Apache Kafka", "RabbitMQ","Redis Pub/Sub"],
+                "Architecture": ["Microservices"]
             },
 
             // Contact Information
@@ -1182,7 +1097,10 @@ projectsGrid.innerHTML = PORTFOLIO_DATA.projects.map(project => `
     <div class="project-card" style="width: 100%; max-width: 800px;">
         <div class="project-icon">${project.icon}</div>
         <h3 class="project-title">${project.title}</h3>
-        <p class="project-description">${project.description}</p>
+        ${Array.isArray(project.description)
+            ? `<ul class="project-description-list">${project.description.map(item => `<li>${item}</li>`).join('')}</ul>`
+            : `<p class="project-description">${project.description}</p>`
+        }
         <div class="project-tech">
             ${project.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
         </div>
@@ -1194,16 +1112,17 @@ projectsGrid.innerHTML = PORTFOLIO_DATA.projects.map(project => `
 `).join('');
 
             // Update skills
-            const skillsGrid = document.querySelector('.skills-grid');
-            skillsGrid.innerHTML = Object.entries(PORTFOLIO_DATA.skills).map(([category, skills]) => `
-                <div class="skill-category">
-                    <h3>${category}</h3>
-                    <div class="skill-list">
-                        ${skills.map(skill => `<span class="skill-item">${skill}</span>`).join('')}
-                    </div>
-                </div>
-            `).join('');
+            const skillsWrapper = document.getElementById('skillsWrapper');
+            const allSkills = [];
+            Object.entries(PORTFOLIO_DATA.skills).forEach(([category, skills]) => {
+                skills.forEach(skill => {
+                    allSkills.push(skill);
+                });
+            });
 
+            skillsWrapper.innerHTML = allSkills.map(skill => 
+                `<span class="skill-pill">${skill}</span>`
+            ).join('');
             // Update contact
             const contactLinks = document.querySelector('.contact-links');
             contactLinks.innerHTML = `
