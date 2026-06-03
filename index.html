@@ -250,11 +250,11 @@
         .hero-description {
             font-size: 1.1rem;
             color: var(--text-secondary);
-            max-width: 600px;
+            max-width: 1200px;
             margin: 0 auto 3rem auto;
             line-height: 1.8;
             animation: fadeInUp 0.8s ease-out 0.6s both;
-            text-align: left;
+            text-align: left
         }
 
         .hero-description p {
@@ -772,21 +772,7 @@
         </div>
     </section>
 
-   <!-- Skills Section -->
-<section id="skills">
-    <div class="container">
-    <div style="text-align: center;">
-        <h2 class="section-title">Skills & Technologies</h2>
-        <p class="section-subtitle">My technical toolkit for building scalable systems</p>
-    </div>
-        
-        <div class="skills-container">
-            <div class="skills-wrapper" id="skillsWrapper">
-                <!-- Skills will be populated by JavaScript -->
-            </div>
-        </div>
-    </div>
-</section>
+
     <!-- Experience Section -->
     <section id="experience">
         <div class="container">
@@ -961,7 +947,7 @@
                         <span class="contact-icon">💼</span>
                         <span class="contact-label">LinkedIn</span>
                     </a>
-
+ 
                     <a href="https://twitter.com/TheRookieTechie" target="_blank" class="contact-link">
                         <span class="contact-icon">🐦</span>
                         <span class="contact-label">Twitter</span>
@@ -1064,18 +1050,19 @@
         const PORTFOLIO_DATA = {
             // Personal Info
             name: "Harshit",
-            title: "Backend & Microservices Engineer",
-            tagline: "Building Scalable Systems at Scale",
-            bio: `<p>I am a Backend & Applied AI Engineer focused on the intersection of scalable distributed systems and LLM-driven applications. I don’t just build AI features; I build the robust, production-grade infrastructure required to make them work at scale.</p>
+            title: "engineering is good, so is maths.",
+            tagline: "Backend & systems engineer: Python & Go | Going deeper with Rust & C.",
+            bio: `<p>I have a thing for low-level systems. Networking internals, distributed systems, systems programming. Most people treat these as separate areas. For me they're one continuous thread. How..!?</p>
+            
+            <p>Imagine you have a perfectly working Distributed System (with a few Quintillion users). What's a Distributed System..?:/</p>
 
-            <p>My engineering philosophy is rooted in the Parnas Principle—prizing modularity and information hiding to manage complexity in evolving systems. Whether I’m optimizing a Go-based microservice for high concurrency or architecting a RAG pipeline in Python, my goal is the same: creating software that is as maintainable as it is performant.</p>
-
-            <p>What I bring to the table:</p>
-            <ul>
-                <li><strong>Distributed Systems:</strong> Deep expertise in Go (goroutines, channels) and microservices. I design for idempotency, fault tolerance, and eventual consistency.</li>
-                <li><strong>Applied AI:</strong> Building sophisticated LLM applications using RAG, advanced retrieval strategies, and efficient data pipelines.</li>
-                <li><strong>Infrastructure:</strong> Extensive experience with the modern backend stack—PostgreSQL, Redis, Kafka, and Docker—with a focus on system design and observability.</li>
-            </ul>`,
+            <p>A Bunch of Services(microservices) talking to each other. How do they talk..? </p>
+            <p>Over a network, Something like Kafka or RabbitMQ. What are those? </p>
+            <p>Networks. Communication. How does that communication actually work?</p>
+            <p>TCP, UDP, IP.  How are those implemented?</p>
+            <p>C. What's the modern evolution of C? </p>
+            <p>Rust :) </p>
+            `,
 
             // Navigation Logo (use your initials or name)
             logo: "<harshitdevio/>",
@@ -1085,7 +1072,7 @@
                 {
                     date: "April 2025 - March 2026",
                     title: "Backend Engineer",
-                    company: "Stealth Startup",
+                    company: "Rectify Labs",
                     achievements: [
                         "Architected a JWT + OTP authentication system using FastAPI and Redis, managing thousands of concurrent sessions with modular, Parnas-aligned security layers.",
                         "Ensured 100% transaction idempotency by implementing a strict state machine for webhook processing, handling partial failures and retries to maintain eventual consistency",
@@ -1098,33 +1085,31 @@
 
             ],
 
-            // Projects
             projects: [
                 {
                     icon: "",
-                    title: "User Authentication & Onboarding Service",
-                    description: ["Engineered a multi-step onboarding state machine (UNVERIFIED → LIMITED → FULL), ensuring 100% state integrity across complex fintech registration flows.",
-                    "Architected a resilient OTP-based auth system utilizing Redis for high-speed verification and JWT (Access/Refresh) for secure session management.",
-                    "Eliminated race conditions and duplicate registrations by implementing explicit state guards and idempotency keys, ensuring predictable behavior during client-side retries.",
-                    "Hardened API security against brute-force and credential stuffing through custom rate-limiting middleware and automated abuse prevention logic.",
-                    "Achieved high-concurrency performance by optimizing PostgreSQL indexing for user lookups and utilizing Redis as a low-latency caching layer for active sessions.",
-                ],
-                    tech: ["FastAPI", "PostgreSQL", "Redis", "OAuth2","Docker"],
+                    title: "AI File Classifier Distributed System",
+                    description: [
+                        "Architected a three-service distributed pipeline: a Go dispatcher for file scanning and batching, a Python inference engine utilizing BART-large-mnli for zero-shot classification, and a Go executor for intelligent routing based on confidence scores.",
+                        "Designed system communication over NATS, ensuring lightweight and efficient message brokering tailored to specific load requirements.",
+                        "Implemented a comprehensive CI/CD pipeline using GitHub Actions, covering the full spectrum of unit, integration, and E2E testing.",
+                        "Fully dockerized the environment to ensure consistency across development, staging, and production deployments."
+                    ],
+                    tech: ["Go", "Python", "FastAPI", "NATS", "Docker", "GitHub Actions"],
                     links: {
-                        github: "https://github.com/harshitdevio/finguard-onboarding-service",
-                        demo: "https://finguard-backend-4o9g.onrender.com/docs"
+                        github: "https://github.com/harshitdevio/AI-Distributed-File-Orchestrator"
                     }
                 },
                 {
                     icon: "",
                     title: "Async Payment Orchestrator",
-                    description: ["Implemented strict FSM-based payment state machine with immutable terminal states and validated transitions, eliminating state corruption across distributed transaction lifecycles",
-                    "Architected idempotent webhook handler with cryptographic deduplication, rejecting out-of-order events and preventing double-charging via event sequencing",
-                    "Built asynchronous retry orchestration with exponential backoff and circuit breakers, achieving eventual consistency during provider outages",
-                    "Eliminated race conditions in concurrent payment processing using Redis distributed locks and PostgreSQL row-level locking under SERIALIZABLE isolation",
-                    "Reduced manual reconciliation by 85% through atomic state transitions with observability hooks for real-time anomaly detection",
-                ],
-                    tech: ["Python/FastAPI","PostgreSQL", "Redis", "OAuth2","Docker"],
+                    description: [
+                        "Designed for non-happy-path scenarios, treating duplicate webhooks, out-of-order events, and mid-operation failures as default assumptions rather than edge cases.",
+                        "Enforced strict FSM-based payment state transitions, ensuring the domain layer remains agnostic of external provider (e.g., Stripe) specifics.",
+                        "Built robust handling for asynchronous events to maintain system integrity and eventual consistency.",
+                        "Optimized for reliability and scalability in distributed payment lifecycles."
+                    ],
+                    tech: ["Python", "FastAPI", "PostgreSQL", "Redis"],
                     links: {
                         github: "https://github.com/harshitdevio/async-payments-service",
                         demo: "https://async-payments-service.onrender.com/docs"
@@ -1132,14 +1117,18 @@
                 },
                 {
                     icon: "",
-                    title: "API Gateway & Rate Limiter",
-                    description: "High-performance API gateway with intelligent routing, rate limiting, and request transformation. Built to handle 100K+ requests per second.",
-                    tech: ["Node.js", "Express", "Redis", "Nginx", "Docker"],
+                    title: "Finguard — Onboarding Service",
+                    description: [
+                        "Modeled fintech onboarding as an explicit state machine: UNVERIFIED → LIMITED → FULL.",
+                        "Implemented rigorous state guards to ensure every step is validated and invalid state transitions are rejected.",
+                        "Achieved clean architectural separation where the auth layer remains decoupled from core business rules, and business rules remain unaware of the underlying auth implementation."
+                    ],
+                    tech: ["Python", "FastAPI", "PostgreSQL", "Redis", "Docker"],
                     links: {
-                        github: "https://github.com/yourusername/project3",
-                        demo: "https://docs.example.com"
+                        github: "https://github.com/harshitdevio/finguard-onboarding-service",
+                        demo: "https://finguard-backend-4o9g.onrender.com/docs"
                     }
-                },
+                }
             ],
 
             // Skills organized by category
@@ -1160,6 +1149,7 @@
                 twitter: "https://x.com/TheRookieTechie"
             }
         };
+        
 
         // ========================================
         // 🚫 DON'T EDIT BELOW THIS LINE
