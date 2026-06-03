@@ -797,8 +797,23 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="timeline-item">
+        <div class="timeline-description">
+            <p>
+                Integrated Stripe into an existing application under a strict modularity constraint. 
+                Followed classical decomposition principles from Parnas's 1972 paper, ensuring the core domain 
+                retains zero explicit knowledge of Stripe. Swapping to an alternative payment provider is entirely 
+                driven by configuration adjustments rather than an architectural rewrite.
+            </p>
+            <div class="project-tech" style="margin-top: 1rem; margin-bottom: 0;">
+                <span class="tech-tag" style="background: rgba(255,255,255,0.05); padding: 0.2rem 0.6rem; border-radius: 4px; margin-right: 0.5rem; font-size: 0.8rem;">Python</span>
+                <span class="tech-tag" style="background: rgba(255,255,255,0.05); padding: 0.2rem 0.6rem; border-radius: 4px; margin-right: 0.5rem; font-size: 0.8rem;">Stripe API</span>
+                <span class="tech-tag" style="background: rgba(255,255,255,0.05); padding: 0.2rem 0.6rem; border-radius: 4px; margin-right: 0.5rem; font-size: 0.8rem;">Software Architecture</span>
+            </div>
+        </div>
+    </div>
+
+                <!-- <div class="timeline-item">
                     <div class="timeline-date">2020 - 2022</div>
                     <h3 class="timeline-title">Backend Engineer</h3>
                     <div class="timeline-company">StartupXYZ</div>
@@ -826,7 +841,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
     </section>
 
     <!-- Projects Section -->
@@ -1050,7 +1065,7 @@
         const PORTFOLIO_DATA = {
             // Personal Info
             name: "Harshit",
-            title: "engineering is good, so is maths.",
+            title: "Engineering is good, so is maths.",
             tagline: "Backend & systems engineer: Python & Go | Going deeper with Rust & C.",
             bio: `<p>I have a thing for low-level systems. Networking internals, distributed systems, systems programming. Most people treat these as separate areas. For me they're one continuous thread. How..!?</p>
             
@@ -1070,17 +1085,32 @@
             // Work Experience
             experience: [
                 {
-                    date: "April 2025 - March 2026",
+                    date: "April 2025 - May 2026",
                     title: "Backend Engineer",
                     company: "Rectify Labs",
                     achievements: [
-                        "Architected a JWT + OTP authentication system using FastAPI and Redis, managing thousands of concurrent sessions with modular, Parnas-aligned security layers.",
-                        "Ensured 100% transaction idempotency by implementing a strict state machine for webhook processing, handling partial failures and retries to maintain eventual consistency",
-                        "Reduced API latency by 40% through strategic Redis caching and PostgreSQL indexing for high-traffic auth and user-profile endpoints.",
-                        "Engineered resilient OAuth2 integrations, utilizing automated retry logic and exponential backoff to handle third-party system downtime without data loss.",
-                        "Developed high-concurrency RESTful APIs consumed by frontend and external systems, prioritizing information hiding to reduce cross-team integration friction."
+                        "Worked on backend services, got exposure to acutal production system and guidance from seniors."
                     ]
                 },
+                {
+            // This is your new job entry
+            date: " ~3 weeks",
+            title: "Freelance — Payment Service Integration into an existing application",
+            company: "",
+            achievements: [
+                "Payment Integration Integrated Stripe into an existing application, but the more interesting constraint was keeping the integration genuinely modular. Followed the decomposition principles from Parnas's 1972 paper: the rest of the system has zero knowledge of Stripe specifically. Swapping to any other provider is a configuration change, not a rewrite.",
+            ]
+        },
+                {
+            // This is your new job entry
+            date: " ~2 months",
+            title: "Freelance — Content Recommendation Engine",
+            company: "",
+            achievements: [
+                "Freelance — Content Recommendation Engine Built a content-based recommendation system using vector embeddings and cosine similarity. Used all-MiniLM-L6-v2 to encode text into high-dimensional vectors — the model maps sentences to coordinates in geometric space. Similarity is then just the cosine of the angle between two vectors: 1 means same direction, 0 means unrelated. Simple math, surprisingly effective.",
+            ]
+        }
+                
 
 
             ],
@@ -1089,12 +1119,7 @@
                 {
                     icon: "",
                     title: "AI File Classifier Distributed System",
-                    description: [
-                        "Architected a three-service distributed pipeline: a Go dispatcher for file scanning and batching, a Python inference engine utilizing BART-large-mnli for zero-shot classification, and a Go executor for intelligent routing based on confidence scores.",
-                        "Designed system communication over NATS, ensuring lightweight and efficient message brokering tailored to specific load requirements.",
-                        "Implemented a comprehensive CI/CD pipeline using GitHub Actions, covering the full spectrum of unit, integration, and E2E testing.",
-                        "Fully dockerized the environment to ensure consistency across development, staging, and production deployments."
-                    ],
+                    description:"Three services, one pipeline: a Go dispatcher that scans and batches files, a Python inference engine running BART-large-mnli for zero-shot classification, and a Go executor that routes files based on confidence scores. Connected over NATS — not Kafka, because the load didn't need Kafka. Dockerized, CI/CD, tested across unit, integration, and E2E.",
                     tech: ["Go", "Python", "FastAPI", "NATS", "Docker", "GitHub Actions"],
                     links: {
                         github: "https://github.com/harshitdevio/AI-Distributed-File-Orchestrator"
@@ -1103,12 +1128,8 @@
                 {
                     icon: "",
                     title: "Async Payment Orchestrator",
-                    description: [
-                        "Designed for non-happy-path scenarios, treating duplicate webhooks, out-of-order events, and mid-operation failures as default assumptions rather than edge cases.",
-                        "Enforced strict FSM-based payment state transitions, ensuring the domain layer remains agnostic of external provider (e.g., Stripe) specifics.",
-                        "Built robust handling for asynchronous events to maintain system integrity and eventual consistency.",
-                        "Optimized for reliability and scalability in distributed payment lifecycles."
-                    ],
+                    description: "Most payment implementations are built around the happy path. This one isn't. Duplicate webhooks, out-of-order events, mid-operation failures — these are the default assumptions, not edge cases. Payments move through a strict state machine; the domain layer has zero knowledge of Stripe.",
+                    tech: ["Python", "FastAPI", "PostgreSQL", "Redis"],
                     tech: ["Python", "FastAPI", "PostgreSQL", "Redis"],
                     links: {
                         github: "https://github.com/harshitdevio/async-payments-service",
@@ -1118,11 +1139,7 @@
                 {
                     icon: "",
                     title: "Finguard — Onboarding Service",
-                    description: [
-                        "Modeled fintech onboarding as an explicit state machine: UNVERIFIED → LIMITED → FULL.",
-                        "Implemented rigorous state guards to ensure every step is validated and invalid state transitions are rejected.",
-                        "Achieved clean architectural separation where the auth layer remains decoupled from core business rules, and business rules remain unaware of the underlying auth implementation."
-                    ],
+                    description: "Fintech onboarding modeled as explicit state transitions: UNVERIFIED → LIMITED → FULL. Every step is guarded, every invalid jump is rejected. The auth layer doesn't know the business rules. The business rules don't know the auth layer.",
                     tech: ["Python", "FastAPI", "PostgreSQL", "Redis", "Docker"],
                     links: {
                         github: "https://github.com/harshitdevio/finguard-onboarding-service",
@@ -1159,7 +1176,7 @@
         function updatePortfolio() {
             // Update personal info
             document.querySelector('h1').textContent = PORTFOLIO_DATA.name;
-            document.querySelector('.hero-tag').textContent = `🚀 ${PORTFOLIO_DATA.title}`;
+            document.querySelector('.hero-tag').textContent = `${PORTFOLIO_DATA.title}`;
             document.querySelector('.hero-subtitle').textContent = PORTFOLIO_DATA.tagline;
             document.querySelector('.hero-description').innerHTML = PORTFOLIO_DATA.bio;
             document.querySelector('.logo').textContent = PORTFOLIO_DATA.logo;
